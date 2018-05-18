@@ -4,8 +4,7 @@ var GitHubStatistics;
 (function (GitHubStatistics) {
     class LDAPCPStats {
         constructor() {
-            this.url = "http://ldapcp-functions.azurewebsites.net/api/GetLatestLDAPCPRepoStats";
-            //url: string = "http://jsfiddle.net/echo/jsonp/";
+            this.url = "https://ldapcp-functions.azurewebsites.net/api/GetLatestLDAPCPRepoStats";
             this.authZKey = "Qa9dKSDOyvgxsbsnJvw9pwTQ3PrGa6J/caQA8RF4tfiz9woaTmeaXQ==";
         }
         getLatestStat() {
@@ -25,7 +24,9 @@ var GitHubStatistics;
             });
         }
         static decodeJSONResponse(json) {
-            var obj = Object.assign({}, json, {});
+            var obj = Object.assign({}, json, {
+            //created: new Date(json.DateStatCreatedUTC)
+            });
             return obj;
         }
         static parseGitHubStatisticsResponse(data) {
