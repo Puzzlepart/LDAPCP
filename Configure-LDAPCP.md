@@ -1,11 +1,15 @@
-# Configure LDAPCP with administration pages
+## Configure LDAPCP
+
+LDAPCP can be customized to fit your needs and your environment.
+
+### Configure with administration pages
 
 LDAPCP comes with 2 administration pages added in central administration > Security:
 
 - Global configuration: Add/remove LDAP servers and configure general settings
-- Claim types configuration: Define the claim types, and their mapping with LDAP attributes
+- Claim types configuration: Define the claim types, and their mapping with LDAP objects
 
-# Configure LDAPCP with PowerShell
+### Configure with PowerShell
 
 Starting with v10, LDAPCP can be configured with PowerShell:
 
