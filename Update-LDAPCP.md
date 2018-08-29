@@ -15,7 +15,8 @@ Run this cmdlet on the server running central administration:
 Update-SPSolution -GACDeployment -Identity "LDAPCP.wsp" -LiteralPath "F:\Data\Dev\LDAPCP.wsp"
 ```
 
-- Wait 1 minute
+- Visit central administration > System Settings > Manage farm solutions: Wait until solution status shows "Deployed"
+> If status shows "Error", restart the SharePoint timer service in central administration server, start a new PowerShell process and run Update-SPSolution again.
 - Restart IIS service on each SharePoint server
 - Visit central administration > Security > LDAPCP global configuration page: Check version and review configuration
 
