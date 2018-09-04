@@ -20,7 +20,10 @@ $trust.ClaimProviderName = "LDAPCP"
 $trust.Update()
 ```
 
-- [Read this page](Configure-LDAPCP.html) to configure LDAPCP for your environment.
+- Visit central administration > System Settings > Manage farm solutions: Wait until solution status shows "Deployed".
+- Update assembly manually on SharePoint servers that do not run the service "Microsoft SharePoint Foundation Web Application" (see below for more details).
+- Restart IIS service and SharePoint timer service on each SharePoint server.
+- [Configure](Configure-LDAPCP.html) LDAPCP for your environment.
 
 ## Important
 
