@@ -18,6 +18,6 @@ Update-SPSolution -GACDeployment -Identity "LDAPCP.wsp" -LiteralPath "F:\Data\De
 - Restart IIS service on each SharePoint server
 - Visit central administration > Security > LDAPCP global configuration page: review the configuration
 
-## Updating from a version earlier than v10
+## Breaking changes
 
-Version 10 is a major update that has breaking changes. If you update from an earlier version, claim type configuration list will be reset and all customization made to that list will be lost.
+Version 10 is a major update that has breaking changes. Updating to v10 (or newer) will reset claim type configuration list, and all customization made to that list will be lost.
