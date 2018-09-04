@@ -1,4 +1,4 @@
-# How to install LDAPCP
+## How to install LDAPCP
 
 > **Important:**  
 > Start a **new PowerShell console** to ensure the use of up to date persisted objects, which avoids concurrency update errors.  

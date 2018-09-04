@@ -1,9 +1,7 @@
-# How to update LDAPCP
+## How to update LDAPCP
 
 > **Important:**  
 > Start a **new PowerShell console** to ensure the use of up to date persisted objects, which avoids concurrency update errors.  
-> Version 10 has breaking changes, please read below if you update from an earlier version.  
-> If some SharePoint servers do not run SharePoint service "Microsoft SharePoint Foundation Web Application", ldapcp.dll must be manually updated in their GAC as [documented here](Install-LDAPCP.html).  
 > [Assembly must be updated manually](Install-LDAPCP.html) on SharePoint servers that do not run SharePoint service "Microsoft SharePoint Foundation Web Application".  
 > If something goes wrong, [check this page](Fix-setup-issues.html) to fix issues.
 
