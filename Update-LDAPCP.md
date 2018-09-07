@@ -13,7 +13,7 @@ Update-SPSolution -GACDeployment -Identity "LDAPCP.wsp" -LiteralPath "F:\Data\De
 ```
 
 - Visit central administration > System Settings > Manage farm solutions: Wait until solution status shows "Deployed"
-> If status shows "Error", restart the SharePoint timer service in central administration server, start a new PowerShell process and run Update-SPSolution again.
+> If status shows "Error", restart the SharePoint timer service on servers where depployment failed, start a new PowerShell process and run Update-SPSolution again.
 - [Update assembly manually](Install-LDAPCP.html) on SharePoint servers that do not run the service "Microsoft SharePoint Foundation Web Application"
 - Restart IIS service on each SharePoint server
 - Visit central administration > Security > LDAPCP global configuration page: review the configuration
