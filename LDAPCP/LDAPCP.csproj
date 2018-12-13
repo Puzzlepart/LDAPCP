@@ -43,7 +43,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LDAPCP.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LDAPCP.pfx.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,9 +56,11 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint">
       <Private>False</Private>
+      <HintPath>..\lib\Microsoft.SharePoint.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime">
       <Private>False</Private>
+      <HintPath>..\lib\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -101,10 +103,10 @@
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{6a2152a5-0941-4e3a-abee-d771c813bdce}</SharePointProjectItemId>
     </None>
-    <None Include="LDAPCP.pfx" />
     <None Include="LDAPCP.AdminLinks\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{48070593-e687-4f19-8920-d28f17368f37}</SharePointProjectItemId>
     </None>
+    <None Include="LDAPCP.pfx.snk" />
     <None Include="Package\Package.package">
       <PackageId>{6ff99767-b95a-4143-8cd8-3978aa01fb80}</PackageId>
     </None>
@@ -137,6 +139,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\gacutil.exe" /f /i "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

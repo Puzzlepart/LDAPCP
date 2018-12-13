@@ -438,7 +438,7 @@ namespace ldapcp
                 this.Lock_Config.EnterReadLock();
                 try
                 {
-                    int maxCount = 30;  // SharePoint sets maxCount to 30 in method FillSearch
+                    int maxCount = 200;  // SharePoint sets maxCount to 30 in method FillSearch
                     OperationContext currentContext = new OperationContext(CurrentConfiguration, OperationType.Search, ProcessedClaimTypesList, resolveInput, null, context, entityTypes, null, maxCount);
                     List<PickerEntity> entities = SearchOrValidate(currentContext);
                     FillEntities(context, entityTypes, resolveInput, ref entities);
@@ -474,7 +474,9 @@ namespace ldapcp
                 this.Lock_Config.EnterReadLock();
                 try
                 {
-                    OperationContext currentContext = new OperationContext(CurrentConfiguration, OperationType.Search, ProcessedClaimTypesList, searchPattern, null, context, entityTypes, hierarchyNodeID, maxCount);
+                    ClaimsProviderLogging.Log($"[{ProviderInternalName}] [DSS CUSTOMIZATION] Ignoring maxCount from SharePoint, setting maxCount=200",
+    TraceSeverity.Medium, EventSeverity.Information, TraceCategory.Claims_Picking);
+                    OperationContext currentContext = new OperationContext(CurrentConfiguration, OperationType.Search, ProcessedClaimTypesList, searchPattern, null, context, entityTypes, hierarchyNodeID, 200);
                     List<PickerEntity> entities = SearchOrValidate(currentContext);
                     FillEntities(context, entityTypes, searchPattern, ref entities);
                     if (entities == null || entities.Count == 0) return;
